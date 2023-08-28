@@ -7,12 +7,12 @@ all:
   COPY (+dirhash/dirhash --GOARCH=arm64) ./dist/dirhash-linux-arm64
   COPY (+dirhash/dirhash --GOOS=darwin --GOARCH=amd64) ./dist/dirhash-darwin-amd64
   COPY (+dirhash/dirhash --GOOS=darwin --GOARCH=arm64) ./dist/dirhash-darwin-arm64
-  RUN cd dist && find . -type f -exec sha256sum {} \; >> checksums.txt
+  RUN cd dist && find . -type f -exec sha256sum {} \; >> ../checksums.txt
   SAVE ARTIFACT ./dist/dirhash-linux-amd64 AS LOCAL dist/dirhash-linux-amd64
   SAVE ARTIFACT ./dist/dirhash-linux-arm64 AS LOCAL dist/dirhash-linux-arm64
   SAVE ARTIFACT ./dist/dirhash-darwin-amd64 AS LOCAL dist/dirhash-darwin-amd64
   SAVE ARTIFACT ./dist/dirhash-darwin-arm64 AS LOCAL dist/dirhash-darwin-arm64
-  SAVE ARTIFACT ./dist/checksums.txt AS LOCAL dist/checksums.txt
+  SAVE ARTIFACT ./checksums.txt AS LOCAL dist/checksums.txt
 
 dirhash:
   ARG GOOS=linux
