@@ -3,7 +3,6 @@ LOCALBIN ?= $(shell pwd)/bin
 SRCS := $(shell find . -type f -name '*.go' -not -path "./vendor/*")
 
 $(LOCALBIN)/dirhash: $(LOCALBIN) $(SRCS)
-	@mkdir -p bin
 	CGO_ENABLED=0 go build --ldflags '-s' -o $@ cmd/dirhash/main.go
 
 tidy:

@@ -40,9 +40,14 @@ jobs:
     - name: Check Out Repo
       uses: actions/checkout@v3
 
+    - name: Setup Go
+      uses: actions/setup-go@v4
+      with:
+        go-version: '^1.20.6'
+
     - name: Build
       run: |
-        mkdir -p bin
+        mkdir -p bin dist
         cp LICENSE bin/LICENSE
 
         export GOOS=linux GOARCH=amd64
