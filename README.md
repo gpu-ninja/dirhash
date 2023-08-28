@@ -1,2 +1,3 @@
 # dirhash
-A little cli for `golang.org/x/mod/sumdb/dirhash` allows for computing hashes of directories.
+
+A little cli for `golang.org/x/mod/sumdb/dirhash` enables computing cryptographic checksums of directories.
