@@ -1,3 +1,3 @@
 # dirhash
 
-A little cli for `golang.org/x/mod/sumdb/dirhash` enables computing cryptographic checksums of directories.
+Cryptographically checksums a directory and its contents. Includes support for signing checksums with ED25519 SSH keys.
